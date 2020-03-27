@@ -50,9 +50,8 @@ console.log(tyrannosaurus.period());
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-tyrannosaurus.roar = function () {
-  return "RAWERSRARARWERSARARARRRR!";
-}
+tyrannosaurus.roar = () => "RAWERSRARARWERSARARARRRR!";
+
 console.log(tyrannosaurus.roar());
 
 
@@ -95,15 +94,17 @@ const contactInfo = [];
 console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
-const Uni = [];
-  for(let i=0, i < graduates.length, i++){
-    let contains = graduates[i].university;
-    if(contains.includes('Uni')){
-      universities.push(contains);
+  const uni = function(arr){
+  const result = [];
+  for(let i=0; i < graduates.length; i++) {
+    let contains = arr[i].university;
+    if(contains.includes("Uni")){
+      result.push(contains);
+      }
     }
-
-  }
-console.log(Uni);
+    return result;
+  };
+console.log(uni(graduates));
 
 
 // ==== ADVANCED Array Methods ====
